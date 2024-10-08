@@ -1,0 +1,306 @@
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	background-color: white;
+	/* Убираем градиент, ставим белый фон */
+	min-height: 100vh;
+	/* Задает минимальную высоту для тела страницы */
+	display: flex;
+	flex-direction: column;
+	/* Позволяет футеру оставаться внизу */
+}
+
+.header {
+	background: rgba(255, 255, 255, 0.8);
+	/* Прозрачный фон для хедера */
+	max-width: 100%;
+	/* Максимальная ширина хедера */
+	padding: 0 20px;
+	/* Отступы по бокам */
+	position: relative;
+	/* Устанавливает позицию для абсолютного позиционирования внутренних элементов */
+	z-index: 10;
+	/* Устанавливает порядок отображения */
+}
+
+.header-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 0;
+	/* Увеличенный отступ по вертикали */
+}
+
+.header-logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+}
+
+.site-name {
+	font-size: 24px;
+	font-weight: bold;
+	margin-left: 100px;
+}
+
+.header-search input {
+	padding: 8px;
+	border: 1px solid #ddd;
+	border-radius: 20px;
+	outline: none;
+	width: 200px;
+}
+
+.header-nav {
+	display: flex;
+	/* Используем flexbox для выравнивания элементов */
+	justify-content: center;
+	/* Выравниваем навигацию по правому краю */
+}
+
+.header-nav ul {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.header-nav ul li {
+	margin: 0 15px;
+	position: relative;
+	/* Для абсолютного позиционирования линии */
+}
+
+.header-nav ul li a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	/* Жирный текст */
+	position: relative;
+	/* Позволяет позиционировать подчеркивание */
+}
+
+.header-nav ul li a:after {
+	content: '';
+	/* Создаем псевдоэлемент для подчеркивания */
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	/* Расстояние от текста */
+	width: 100%;
+	/* Ширина равна ширине текста */
+	height: 2px;
+	/* Высота линии */
+	background-color: black;
+	/* Цвет подчеркивания */
+	transform: scaleX(0);
+	/* Изначально скрываем подчеркивание */
+	transition: transform 0.3s ease;
+	/* Плавный переход */
+}
+
+.header-nav ul li a:hover:after {
+	transform: scaleX(1);
+	/* Появление подчеркивания при наведении */
+}
+
+.header-nav ul li a:active:after,
+.header-nav ul li a:focus:after {
+	transform: scaleX(1);
+	/* Подчеркивание остаётся при активном состоянии */
+}
+
+.header-right {
+	display: flex;
+	align-items: center;
+}
+
+.header-right span {
+	margin-right: 15px;
+}
+
+.header-right button {
+	padding: 8px 15px;
+	background-color: black;
+	color: white;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.container {
+	display: flex;
+	max-width: 1200px;
+	/* Максимальная ширина контейнера */
+	margin: 20px auto;
+	/* Центрирование контейнера */
+	padding: 0 20px;
+	/* Отступы по бокам */
+	flex-grow: 1;
+	/* Позволяет контейнеру занимать оставшееся пространство */
+}
+
+.sidebar {
+	width: 250px;
+	margin-right: 20px;
+}
+
+.filter-section {
+	margin-bottom: 20px;
+}
+
+.filter-section h3 {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+
+.filter-section ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.filter-section ul li {
+	margin-bottom: 10px;
+}
+
+.restaurant-list {
+	flex-grow: 1;
+}
+
+.restaurant-item {
+	display: flex;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+}
+
+.restaurant-item img {
+	width: 350px;
+	height: 300px;
+	object-fit: cover;
+	margin-right: 20px;
+}
+
+.restaurant-info h3 {
+	font-size: 22px;
+	margin: 0;
+	padding-bottom: 20px;
+}
+
+.restaurant-info p {
+	margin: 5px 0;
+	padding-bottom: 10px;
+}
+
+.footer {
+	padding: 20px;
+	text-align: center;
+	color: black;
+	/* Цвет текста футера */
+}
+
+.restaurant-info strong {
+	font-weight: bold;
+	/* Жирный текст */
+	font-size: 16px;
+	/* Размер текста заголовка */
+	margin-right: 5px;
+	/* Отступ между заголовком и текстом */
+}
+
+.working-hours {
+	transition: max-height 0.3s ease-out;
+	overflow: hidden;
+}
+
+.modal {
+	display: none;
+	/* Скрыто по умолчанию */
+	position: fixed;
+	/* Окно фиксируется */
+	z-index: 1000;
+	/* Поверх других элементов */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Полная ширина */
+	height: 100%;
+	/* Полная высота */
+	overflow: auto;
+	/* Включаем прокрутку при необходимости */
+	background-color: rgba(0, 0, 0, 0.8);
+	/* Полупрозрачный фон */
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	/* Центрируем окно */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	/* Ширина модального окна */
+	max-width: 600px;
+	/* Максимальная ширина */
+}
+
+.close-button {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.search-input {
+	width: 75%;
+	/* Ширина 75% */
+	padding: 10px;
+	/* Отступы внутри */
+	margin-bottom: 15px;
+	/* Отступ снизу */
+	border: 1px solid #ccc;
+	/* Рамка */
+	border-radius: 4px;
+	/* Закругленные углы */
+}
+
+.dish-container {
+	display: flex;
+	/* Используем flexbox для расположения */
+	flex-wrap: wrap;
+	/* Перенос строк для длинного списка */
+}
+
+#search-dish {
+	width: 95%;
+	/* Установка ширины для строки поиска */
+	padding: 8px;
+	margin-bottom: 10px;
+}
+
+.dish-item {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	/* Изменяем указатель на указатель */
+	margin: 5px 0;
+}
+
+.dish-checkbox {
+	margin-right: 2px;
+	/* Отступ справа для чекбокса */
+	margin-left: 20px;
+}

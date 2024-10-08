@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<script src="javascript.js" defer></script>
+	<title>Рестораны Праги</title>
+</head>
+
+<body>
+	<div class="header">
+		<div class="header-top">
+			<div class="header-logo">
+				<span class="site-name">MoldSearch</span>
+			</div>
+			<div class="header-search">
+				<input type="text" placeholder="Поиск">
+			</div>
+			<div class="header-right">
+				<button>Войти</button>
+			</div>
+		</div>
+		<div class="header-nav">
+			<ul>
+				<li><a href="#">Город</a></li>
+				<li><a href="#">Отели</a></li>
+				<li><a href="#">Рестораны</a></li>
+				<li><a href="#">Форумы</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+		<div class="sidebar">
+			<div class="filter-section">
+				<h3 class="filter-header">Тип заведения <span class="arrow" onclick="toggleDropdown(this)">▼</span></h3>
+				<ul>
+					<li><input type="checkbox"> Рестораны</li>
+					<li><input type="checkbox"> Кофе и чай</li>
+					<li><input type="checkbox"> Бары и клубы</li>
+					<li><input type="checkbox"> Десерты</li>
+				</ul>
+			</div>
+			<div class="filter-section">
+
+				<h3 class="filter-header">Время приема пищи<span class="arrow" onclick="toggleDropdown(this)">▼</span>
+				</h3>
+				<ul>
+					<li><input type="checkbox"> Завтрак</li>
+					<li><input type="checkbox"> Бранч</li>
+					<li><input type="checkbox"> Обед</li>
+					<li><input type="checkbox"> Ужин</li>
+				</ul>
+			</div>
+			<div class="filter-section">
+				<h3 class="filter-header">Онлайн-опции и предложения<span class="arrow"
+						onclick="toggleDropdown(this)">▼</span></h3>
+				<ul>
+					<li><input type="checkbox">Бронирование Онлайн</li>
+				</ul>
+			</div>
+			<div class="filter-section">
+				<h3 class="filter-header">Цена<span class="arrow" onclick="toggleDropdown(this)">▼</span></h3>
+				<ul>
+					<li><input type="checkbox"> Дешево $</li>
+					<li><input type="checkbox"> Умеренно $$</li>
+					<li><input type="checkbox"> Дорого $$$</li>
+				</ul>
+			</div>
+			<div class="filter-section">
+				<h3 class="filter-header">Национальные кухни<span class="arrow" onclick="toggleDropdown(this)">▼</span>
+				</h3>
+				<ul>
+					<li><input type="checkbox"> Международная</li>
+					<li><input type="checkbox"> Европейская</li>
+					<li><input type="checkbox"> Бар</li>
+					<li><input type="checkbox"> Азиатская</li>
+				</ul>
+			</div>
+			<div class="filter-section">
+				<h3 class="filter-header">Блюда<span class="arrow" onclick="toggleDropdown(this)">▼</span></h3>
+				<ul>
+					<li><input type="checkbox"> Салаты</li>
+					<li><input type="checkbox"> Говядина</li>
+					<li><input type="checkbox"> Курица</li>
+					<li><input type="checkbox"> Баранина</li>
+					<button id="show-more-dishes">Показать еще</button> <!-- Кнопка для показа блюд -->
+				</ul>
+
+			</div>
+		</div>
+		<div class="restaurant-list">
+			<div class="restaurant-item">
+				<img src="img/Mangal.jpg" alt="Restaurant 1">
+				<div class="restaurant-info">
+					<h3>Mangal</h3>
+					<p><a href="">1 456 отзывов</a></p>
+					<p><strong>Услуги:</strong> Есть терраса · Есть камин · Хорошие коктейли</p>
+					<p><strong>Адрес:</strong> Strada Arborilor 17/2, MD-2000, Chișinău</p>
+					<p><strong>Телефон:</strong> 0620 50 777</p>
+					<p><strong>Часы работы:</strong> <span class="toggle-hours">▼</span></p>
+					<div class="working-hours" style="display: none;">
+						<p>Вторник: 08:00–00:00</p>
+						<p>Среда: 08:00–00:00</p>
+						<p>Четверг: 08:00–00:00</p>
+						<p>Пятница: 08:00–02:00</p>
+						<p>Суббота: 08:00–02:00</p>
+						<p>Воскресенье: 08:00–00:00</p>
+						<p>Понедельник: 08:00–00:00</p>
+					</div>
+					<p><strong>Меню:</strong> <a
+							href="https://www.facebook.com/mangalrestaurant2020/menu/">facebook.com</a></p>
+					<p><strong><a href="">“Очень понравилось!”</a></strong></p>
+				</div>
+			</div>
+			<div class="restaurant-item">
+				<img src="img/Rabit.jpg" alt="Restaurant 1">
+				<div class="restaurant-info">
+					<h3>Black Rabbit Gastro-Burrow</h3>
+					<p><a href="">1 456 отзывов</a></p>
+					<p><strong>Услуги:</strong> Веганские блюда в меню · Есть живая музыка · Есть стулья для кормления
+					</p>
+					<p><strong>Адрес:</strong> Strada Vlaicu Pârcălab 45, Chișinău</p>
+					<p><strong>Телефон:</strong> 0783 33 322</p>
+					<p><strong>Часы работы:</strong> <span class="toggle-hours">▼</span></p>
+					<div class="working-hours" style="display: none;">
+						<p>Вторник: 10:00–00:00</p>
+						<p>Среда: 10:00–00:00</p>
+						<p>Четверг: 10:00–00:00</p>
+						<p>Пятница: 10:00–02:00</p>
+						<p>Суббота: 10:00–02:00</p>
+						<p>Воскресенье: 10:00–00:00</p>
+						<p>Понедельник: 10:00–00:00</p>
+					</div>
+					<p><strong>Меню:</strong> <a
+							href="https://blackrabbit.md/en/product-category/zavtraki/">blackrabbit.md</a></p>
+					<p><strong><a href="">“Очень понравилось!”</a></strong></p>
+				</div>
+			</div>
+			<div class="restaurant-item">
+				<img src="img/Lake House.jpg" alt="Restaurant 1">
+				<div class="restaurant-info">
+					<h3>Lake House</h3>
+					<p><a href="">1 456 отзывов</a></p>
+					<p><strong>Услуги:</strong>Здесь можно заказать еду в баре</p>
+					<p><strong>Адрес:</strong>Strada Stefan Cel Mare, 182 Chisinau, MD-2001</p>
+					<p><strong>Телефон:</strong>0607 77 979</p>
+					<p><strong>Часы работы:</strong> <span class="toggle-hours">▼</span></p>
+					<div class="working-hours" style="display: none;">
+						<p>Вторник: 12:00–00:00</p>
+						<p>Среда: 12:00–00:00</p>
+						<p>Четверг: 12:00–00:00</p>
+						<p>Пятница: 12:00–02:00</p>
+						<p>Суббота: 12:00–02:00</p>
+						<p>Воскресенье: 12:00–00:00</p>
+						<p>Понедельник: 12:00–00:00</p>
+					</div>
+					<p><strong>Меню:</strong> <a href="https://lakehouse.md/">lake hoouse menu</a></p>
+					<p><strong><a href="">“Очень понравилось!”</a></strong></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Модальное окно для блюд -->
+	<div id="dish-modal" class="modal">
+		<div class="modal-content">
+			<span class="close-button">&times;</span>
+			<h2>Блюда</h2>
+			<input type="text" id="search-dish" placeholder="Поиск блюд" class="search-input">
+			<div id="dish-list" class="dish-container">
+				<!-- Список блюд будет добавлен через JavaScript -->
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="footer">
+		<p>© 2024 Все права защищены</p>
+	</div>
+</body>
+
+</html>
